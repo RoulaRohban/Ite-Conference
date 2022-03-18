@@ -63,8 +63,7 @@
     </nav>
 </header>
 <main id="home">
-    <!-- هون بدلي يلي جوات url -->
-    <section id="banner" class="position-relative" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url('../images/confernce-hall-geneva.jpg');">
+    <section id="banner" class="position-relative" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url('{{ str_replace('\\', '/', $conference->cover_image) }}');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -180,18 +179,18 @@
 <footer>
     <div>
         Copyright 2022 Damascus university | Developed by:
-        <a href="" class="Aous" target="_blank">
+        <a href="https://www.linkedin.com/in/roula-alrohban-452b91202" class="Aous" target="_blank">
             Roula AlRohban
         </a>
         &
         <a href="https://aous-mmd.github.io" class="Aous" target="_blank">
             Aous Mohammad
         </a>
-        | Designed By: 
-        <a href="" class="Aous" target="_blank">
-            Roaa Alkilany 
+        | Designed By:
+        <a href="https://www.behance.net/rouaakl" class="Aous" target="_blank">
+            Roua'a Alkilany
         </a>
-        | Deployed by: 
+        | Deployed by:
         <a href="https://linkedin.com/in/yazan-alkahaleh-3155541a3" class="Aous" target="_blank">
             Yazan Alkahaleh
         </a>
@@ -205,7 +204,7 @@
     // Set the date we're counting down to
 
     // هون حطي الموعد تبع المؤتمر
-    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+    var countDownDate = new Date('{{ $conference->date }}').getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function () {
