@@ -24,7 +24,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-left">
+            <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-up">
                 <img src="{{ $conference->logo }}" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -34,24 +34,24 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item" data-aos="fade-right">
+                    <li class="nav-item" data-aos="fade-up">
                         <a class="nav-link active" aria-current="page" href="{{ route('home') }}">
                             الصفحة الرئيسية
                         </a>
                     </li>
                     @foreach($sections as $section)
-                    <li class="nav-item" data-aos="fade-right">
+                    <li class="nav-item" data-aos="fade-up">
                         <a class="nav-link" href="#{{ $section->title }}">
                             {{ $section->title }}
                         </a>
                     </li>
                     @endforeach
-                    <li class="nav-item" data-aos="fade-right">
+                    <li class="nav-item" data-aos="fade-up">
                         <a class="nav-link" href="#supervisors">
                             اللجنة المشرفة
                         </a>
                     </li>
-                    <li class="nav-item" data-aos="fade-right">
+                    <li class="nav-item" data-aos="fade-up">
                         <a class="nav-link" href="#contact">
                             تواصل معنا
                         </a>
@@ -108,7 +108,7 @@
             <div class="row">
                 <div class="col-md-12">
                     @foreach($sections as $section)
-                    <div id="{{ $section->title }}" class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-right">
+                    <div id="{{ $section->title }}" class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-up">
                         <h2>{{ $section->title }}</h2>
                         <hr>
                         <p class="mt-5">{{ $section->description }}</p>
