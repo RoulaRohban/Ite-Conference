@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-left">
-                <img src="{{ $conference->logo }}" alt="" width="150" height="auto">
+                <img src="{{ $conference->logo }}" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -165,7 +165,7 @@
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">الرسالة</label>
                             <textarea type="text" class="form-control" id="inputAddress2" rows="6"
-                                      placeholder="Apartment, studio, or floor" name="message">
+                                      placeholder="الرسالة" name="message">
                                     </textarea>
                         </div>
                         <div class="col-12">
@@ -180,8 +180,20 @@
 <footer>
     <div>
         Copyright 2022 Damascus university | Developed by:
-        <a href="https://aous-mmd.github.io" target="_blank">
+        <a href="" class="Aous" target="_blank">
+            Roula AlRohban
+        </a>
+        &
+        <a href="https://aous-mmd.github.io" class="Aous" target="_blank">
             Aous Mohammad
+        </a>
+        | Designed By: 
+        <a href="" class="Aous" target="_blank">
+            Roaa Alkilany 
+        </a>
+        | Deployed by: 
+        <a href="https://linkedin.com/in/yazan-alkahaleh-3155541a3" class="Aous" target="_blank">
+            Yazan Alkahaleh
         </a>
     </div>
 </footer>
