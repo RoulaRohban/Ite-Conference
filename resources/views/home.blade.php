@@ -151,23 +151,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 mt-5">
-                    <form class="row g-3">
+                    <form class="row g-3" method="POST" action="{{ route('contact-us') }}">
+                    @csrf
                         <div class="col-md-12">
                             <label for="inputEmail4" class="form-label">البريد الالكتروني</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <input type="email" class="form-control" id="inputEmail4" name="email">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">عنوان الرسالة</label>
-                            <input type="text" class="form-control" id="inputAddress">
+                            <input type="text" class="form-control" id="inputAddress" name="title">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">الرسالة</label>
                             <textarea type="text" class="form-control" id="inputAddress2" rows="6"
-                                      placeholder="Apartment, studio, or floor">
+                                      placeholder="Apartment, studio, or floor" name="message">
                                     </textarea>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
+                            <button type="submit" class="btn btn-primary">إرسال</button>
                         </div>
                     </form>
                 </div>

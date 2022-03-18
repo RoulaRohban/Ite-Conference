@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/contact-us', 'HomeController@storeContact')->name('contact-us');
 
 
 Route::group(['prefix' => 'admin'], function () {
