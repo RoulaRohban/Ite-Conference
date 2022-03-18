@@ -1,0 +1,100 @@
+header nav ul li {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+header nav ul li a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+#home #banner {
+  width: 100%;
+  height: 80vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.445)), to(rgba(0, 0, 0, 0.5))), url("../images/confernce-hall-geneva.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url("../images/confernce-hall-geneva.jpg");
+}
+
+#home #banner h1,
+#home #banner p {
+  color: white;
+  margin-bottom: 10%;
+}
+
+#home #banner .description {
+  top: 50%;
+  right: 20%;
+}
+
+#home #desc {
+  padding: 5em;
+}
+
+#about,
+#contact {
+  padding: 5em;
+}
+
+header {
+  height: 11vh;
+}
+
+header nav {
+  height: 11vh;
+}
+
+footer {
+  height: 7vh;
+  background-color: #1d1d1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer div {
+  color: white;
+}
+
+h2 {
+  text-decoration: underline;
+  color: #053f00;
+}
+
+main {
+  min-height: 82vh;
+}
+
+#supervisors .supervisor img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-position: top;
+     object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.counter #demo {
+  font-size: 35px;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+section {
+  padding: 4em;
+}
+
+section:nth-child(odd) {
+  background-color: #cfcfcf;
+}
+/*# sourceMappingURL=style.css.map */

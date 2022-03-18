@@ -1,0 +1,91 @@
+header {
+    nav ul li {
+        margin-right: 5%;
+        margin-left: 5%;
+        a {
+            width: max-content;
+        }
+    }
+}
+
+#home {
+    #banner {
+        width: 100%;
+        height: 80vh;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)),
+            url("../images/confernce-hall-geneva.jpg");
+        h1,
+        p {
+            color: white;
+            margin-bottom: 10%;
+        }
+        .description {
+            top: 50%;
+            right: 20%;
+        }
+    }
+    #desc {
+        padding: 5em;
+    }
+}
+
+#about,
+#contact {
+    padding: 5em;
+}
+header {
+    height: 11vh;
+    nav {
+        height: 11vh;
+    }
+}
+footer {
+    height: 7vh;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+        color: white;
+    }
+}
+
+h2 {
+    text-decoration: underline;
+    color: rgb(5, 63, 0);
+}
+
+main {
+    min-height: 82vh;
+}
+
+#supervisors {
+    .supervisor {
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-position: top;
+            object-fit: cover;
+        }
+    }
+}
+
+
+.counter {
+    #demo {
+        font-size: 35px;
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
+}
+
+section {
+    padding: 4em;
+}
+section:nth-child(odd) {
+    background-color: rgb(207, 207, 207);
+}
