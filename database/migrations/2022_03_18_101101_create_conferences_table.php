@@ -19,6 +19,8 @@ class CreateConferencesTable extends Migration
             $table->string('bio');
             $table->string('country');
             $table->dateTime('date');
+            $table->string('cover_image')->nullable();
+            $table->string('logo');
             $table->timestamps();
         });
     }
