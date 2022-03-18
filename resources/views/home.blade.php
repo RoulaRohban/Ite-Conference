@@ -63,7 +63,8 @@
     </nav>
 </header>
 <main id="home">
-    <section id="banner" class="position-relative">
+    <!-- هون بدلي يلي جوات url -->
+    <section id="banner" class="position-relative" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url('../images/confernce-hall-geneva.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -190,6 +191,8 @@
 <script>
     AOS.init();
     // Set the date we're counting down to
+
+    // هون حطي الموعد تبع المؤتمر
     var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
 
     // Update the count down every 1 second

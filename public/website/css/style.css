@@ -15,8 +15,6 @@ header nav ul li a {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.445)), to(rgba(0, 0, 0, 0.5))), url("../images/confernce-hall-geneva.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url("../images/confernce-hall-geneva.jpg");
 }
 
 #home #banner h1,
@@ -27,7 +25,7 @@ header nav ul li a {
 
 #home #banner .description {
   top: 50%;
-  right: 20%;
+  right: 25%;
 }
 
 #home #desc {
@@ -54,11 +52,11 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 footer div {
@@ -79,9 +77,9 @@ main {
   height: 200px;
   border-radius: 50%;
   -o-object-position: top;
-     object-position: top;
+  object-position: top;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .counter #demo {
@@ -96,5 +94,20 @@ section {
 
 section:nth-child(odd) {
   background-color: #cfcfcf;
+}
+
+.navbar {
+  height: 15%;
+}
+.navbar .container-fluid {
+  height: 100%;
+}
+.navbar .container-fluid .navbar-brand {
+  height: 100%;
+}
+.navbar .container-fluid .navbar-brand  img{
+  width: 100%;
+  height: 100%;
+  object-fit: revert;
 }
 /*# sourceMappingURL=style.css.map */
