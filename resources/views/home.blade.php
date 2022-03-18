@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>اسم الموقع</title>
+    <title>{{ $conference->name ?? '' }}</title>
     <meta name="description" content="تفاصيل عن الموقع">
 
 
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-left">
-                <img src="{{ asset('website/images/Google-Logo.png') }}" alt="" width="150" height="auto">
+                <img src="{{ $conference->logo }}" alt="" width="150" height="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -39,11 +39,13 @@
                             الصفحة الرئيسية
                         </a>
                     </li>
+                    @foreach($sections as $section)
                     <li class="nav-item" data-aos="fade-right">
-                        <a class="nav-link" href="#about">
-                            من نحن
+                        <a class="nav-link" href="#{{ $section->title }}">
+                            {{ $section->title }}
                         </a>
                     </li>
+                    @endforeach
                     <li class="nav-item" data-aos="fade-right">
                         <a class="nav-link" href="#supervisors">
                             اللجنة المشرفة
@@ -66,15 +68,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="description position-absolute translate-middle" data-aos="zoom-in-up">
-                        <h1>اسم المؤتمر</h1>
-                        <p>شرح المؤتمر</p>
+                        <h1>{{ $conference->name ?? '' }}</h1>
+                        <p>{{ $conference->bio ?? '' }}</p>
                         <p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                             </svg>
-                            بلد المؤتمر
+                            {{ $conference->country ?? '' }}
                         </p>
                         <p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -84,7 +86,7 @@
                                 <path
                                     d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                             </svg>
-                            تاريخ المؤتمر
+                            {{ $conference->date ?? '' }}
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-clock" viewBox="0 0 16 16">
                                 <path
@@ -105,52 +107,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-right">
-                        <h2>لمحة عامة</h2>
+                    @foreach($sections as $section)
+                    <div id="{{ $section->title }}" class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-right">
+                        <h2>{{ $section->title }}</h2>
                         <hr>
-                        <p class="mt-5">تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل</p>
+                        <p class="mt-5">{{ $section->description }}</p>
                     </div>
-                    <div class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-left">
-                        <h2>اهدافنا</h2>
-                        <hr>
-                        <p class="mt-5">تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل
-                            تفاصيل
-                            تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل تفاصيل</p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -163,41 +126,15 @@
                         <h3>اللجنة المشرفة</h3>
                     </div>
                 </div>
+                @foreach($supervisors as $supervisor)
                 <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <div class="supervisor text-center">
-                        <img src="{{ asset('website/images/Andrzej_Person_Kancelaria_Senatu.jpg') }}" alt="">
-                        <div class="title my-3 fw-bolder">اسم الدكتور</div>
-                        <small class="my-3">المسمى الوظيفي</small>
+                        <img src="{{ $supervisor->image }}" alt="">
+                        <div class="title my-3 fw-bolder">{{ $supervisor->name }}</div>
+                        <small class="my-3">{{ $supervisor->position }}</small>
                     </div>
                 </div>
-                <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="supervisor text-center">
-                        <img src="{{ asset('website/images/Andrzej_Person_Kancelaria_Senatu.jpg') }}" alt="">
-                        <div class="title my-3 fw-bolder">اسم الدكتور</div>
-                        <small class="my-3">المسمى الوظيفي</small>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="supervisor text-center">
-                        <img src="{{ asset('website/images/Andrzej_Person_Kancelaria_Senatu.jpg') }}" alt="">
-                        <div class="title my-3 fw-bolder">اسم الدكتور</div>
-                        <small class="my-3">المسمى الوظيفي</small>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="supervisor text-center">
-                        <img src="{{ asset('website/images/Andrzej_Person_Kancelaria_Senatu.jpg') }}" alt="">
-                        <div class="title my-3 fw-bolder">اسم الدكتور</div>
-                        <small class="my-3">المسمى الوظيفي</small>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="supervisor text-center">
-                        <img src="{{ asset('website/images/Andrzej_Person_Kancelaria_Senatu.jpg') }}" alt="">
-                        <div class="title my-3 fw-bolder">اسم الدكتور</div>
-                        <small class="my-3">المسمى الوظيفي</small>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
