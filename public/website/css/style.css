@@ -146,7 +146,9 @@ section:nth-child(odd) {
     font-size: 10px;
   }
 }
-
+#mobile {
+  display: none;
+}
 @media (max-width: 768px) {
   #home #banner .description {
     right: 40%;
@@ -160,9 +162,21 @@ section:nth-child(odd) {
   #home #contact {
     padding: 1em;
   }
-  footer {
+  #lap {
     display: none;
   }
+  #mobile {
+    display: block;
+    height: auto;
+    text-align: left;
+    padding: 20px;
+  }
+  #mobile div {
+    font-size: 15px;
+    direction: ltr;
+    margin-bottom: 10px;
+  }
+  
   .card {
     padding: 1em !important;
   }
