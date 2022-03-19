@@ -167,4 +167,7 @@ section:nth-child(odd) {
     padding: 1em !important;
   }
 }
+.navbar-collapse {
+  background-color: white;
+}
 /*# sourceMappingURL=style.css.map */
