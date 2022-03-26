@@ -34,7 +34,7 @@
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item" data-aos="fade-up">
                             <a class="nav-link active" aria-current="page" href="{{ route('home') }}">
-                                الصفحة الرئيسية
+                                @lang('home.mainPage')
                             </a>
                         </li>
                         @foreach($sections as $section)
@@ -46,12 +46,12 @@
                         @endforeach
                         <li class="nav-item" data-aos="fade-up">
                             <a class="nav-link" href="#supervisors">
-                                اللجنة المشرفة
+                                @lang('home.supervisors')
                             </a>
                         </li>
                         <li class="nav-item" data-aos="fade-up">
                             <a class="nav-link" href="#contact">
-                                تواصل معنا
+                                @lang('home.contactUs')
                             </a>
                         </li>
 
@@ -85,7 +85,7 @@
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                                 </svg>
                             </p>
-                            <button type="button" class="btn btn-primary btn-lg">تسجيل</button>
+                            <button type="button" class="btn btn-primary btn-lg">@lang('home.register')</button>
                             <div class="counter">
                                 <p id="demo"></p>
                             </div>
@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-5">
                         <div class="text-center">
-                            <h3>اللجنة المشرفة</h3>
+                            <h3>@lang('home.supervisors')</h3>
                         </div>
                     </div>
                     @foreach($supervisors as $supervisor)
@@ -134,7 +134,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <h3>تواصل معنا</h3>
+                            <h3>@lang('home.contactUs')</h3>
                         </div>
                     </div>
                 </div>
@@ -145,20 +145,20 @@
                         <form class="row g-3" method="POST" action="{{ route('contact-us') }}">
                             @csrf
                             <div class="col-md-12">
-                                <label for="inputEmail4" class="form-label">البريد الالكتروني</label>
+                                <label for="inputEmail4" class="form-label">@lang('home.email')</label>
                                 <input type="email" class="form-control" id="inputEmail4" name="email">
                             </div>
                             <div class="col-12">
-                                <label for="inputAddress" class="form-label">عنوان الرسالة</label>
+                                <label for="inputAddress" class="form-label">@lang('home.title')</label>
                                 <input type="text" class="form-control" id="inputAddress" name="title">
                             </div>
                             <div class="col-12">
-                                <label for="inputAddress2" class="form-label">الرسالة</label>
+                                <label for="inputAddress2" class="form-label">@lang('home.message')</label>
                                 <textarea type="text" class="form-control" id="inputAddress2" rows="6" placeholder="الرسالة" name="message">
                                     </textarea>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">إرسال</button>
+                                <button type="submit" class="btn btn-primary">@lang('home.send')</button>
                             </div>
                         </form>
                     </div>
@@ -241,10 +241,10 @@
             // Output the result in an element with id="demo"
             document.getElementById("demo").innerHTML =
                 `<div class="datetime">
-                    <span>${days} يوم :</span>
-                    <span>${hours} ساعة :</span>
-                    <span>${minutes} دقيقة :</span>
-                    <span>${seconds} ثانية</span>
+                    <span>${days}</span>@lang('home.days')
+                    <span>${hours}</span>@lang('home.hours')
+                    <span>${minutes}</span>@lang('home.minutes')
+                    <span>${seconds}</span>@lang('home.seconds')
             </div>`;
 
             // If the count down is over, write some text
