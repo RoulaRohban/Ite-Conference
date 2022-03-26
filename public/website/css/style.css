@@ -149,6 +149,11 @@ section:nth-child(odd) {
 #mobile {
   display: none;
 }
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: white;
+  }
+}
 @media (max-width: 768px) {
   #home #banner .description {
     right: 40%;
@@ -176,12 +181,10 @@ section:nth-child(odd) {
     direction: ltr;
     margin-bottom: 10px;
   }
-  
+
   .card {
     padding: 1em !important;
   }
 }
-.navbar-collapse {
-  background-color: white;
-}
+
 /*# sourceMappingURL=style.css.map */
