@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ $conference->name ?? '' }}</title>
+    <title>{{ $conference->getTranslatedAttribute('name') ?? '' }}</title>
     <meta name="description" content="تفاصيل عن الموقع">
 
 
@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-up">
-                    <img src="{{ $conference->logo }}" alt="" />
+                    <img src="{{ $conference->getTranslatedAttribute('logo') }}" alt="" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                         @foreach($sections as $section)
                         <li class="nav-item" data-aos="fade-up">
                             <a class="nav-link" href="#{{ $section->title }}">
-                                {{ $section->title }}
+                                {{ $section->getTranslatedAttribute('title') }}
                             </a>
                         </li>
                         @endforeach
@@ -54,25 +54,38 @@
                                 @lang('home.contactUs')
                             </a>
                         </li>
-
+                        @if ('en' != App::getLocale())
+                            <li class="nav-item" data-aos="fade-up">
+                                <a class="nav-link" href="{{ route('lang.switch', 'en') }}">
+                                    @lang('home.englishLanguage')
+                                </a>
+                            </li>
+                        @endif
+                        @if ('ar' != App::getLocale())
+                            <li class="nav-item" data-aos="fade-up">
+                                <a class="nav-link" href="{{ route('lang.switch', 'ar') }}">
+                                    @lang('home.arabicLanguage')
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main id="home">
-        <section id="banner" class="position-relative" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url('{{ str_replace('\\', '/', $conference->cover_image) }}');">
+        <section id="banner" class="position-relative" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)), url('{{ str_replace('\\', '/', $conference->getTranslatedAttribute('cover_image')) }}');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="description position-absolute translate-middle" data-aos="zoom-in-up">
-                            <h1>{{ $conference->name ?? '' }}</h1>
-                            <p>{{ $conference->bio ?? '' }}</p>
+                            <h1>{{ $conference->getTranslatedAttribute('name') ?? '' }}</h1>
+                            <p>{{ $conference->getTranslatedAttribute('bio') ?? '' }}</p>
                             <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                                 </svg>
-                                {{ $conference->country ?? '' }}
+                                {{ $conference->getTranslatedAttribute('country') ?? '' }}
                             </p>
                             <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
@@ -100,9 +113,9 @@
                     <div class="col-md-12">
                         @foreach($sections as $section)
                         <div id="{{ $section->title }}" class="card p-5 mb-5 bg-dark bg-opacity-10" data-aos="fade-up">
-                            <h2>{{ $section->title }}</h2>
+                            <h2>{{ $section->getTranslatedAttribute('title') }}</h2>
                             <hr>
-                            <p class="mt-5">{{ $section->description }}</p>
+                            <p class="mt-5">{{ $section->getTranslatedAttribute('description') }}</p>
                         </div>
                         @endforeach
                     </div>
@@ -121,8 +134,8 @@
                     <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <div class="supervisor text-center">
                             <img src="{{ $supervisor->image }}" alt="">
-                            <div class="title my-3 fw-bolder">{{ $supervisor->name }}</div>
-                            <small class="my-3">{{ $supervisor->position }}</small>
+                            <div class="title my-3 fw-bolder">{{ $supervisor->getTranslatedAttribute('name') }}</div>
+                            <small class="my-3">{{ $supervisor->getTranslatedAttribute('position') }}</small>
                         </div>
                     </div>
                     @endforeach

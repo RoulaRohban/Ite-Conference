@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('/contact-us', 'HomeController@storeContact')->name('contact-us');
+Route::get('/lang/{lang}', 'HomeController@switchLang')->name('lang.switch');
 
 
 Route::group(['prefix' => 'admin'], function () {

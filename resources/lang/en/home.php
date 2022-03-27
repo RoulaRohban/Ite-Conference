@@ -14,4 +14,6 @@ return [
     'hours' => 'Hours',
     'minutes' => 'Minutes',
     'seconds' => 'Seconds',
+    'englishLanguage' => 'English Language',
+    'arabicLanguage' => 'Arabic Language',
 ];
