@@ -146,6 +146,7 @@ section:nth-child(odd) {
     font-size: 10px;
   }
 }
+
 #mobile {
   display: none;
 }
@@ -186,5 +187,7 @@ section:nth-child(odd) {
     padding: 1em !important;
   }
 }
+
+
 
 /*# sourceMappingURL=style.css.map */
