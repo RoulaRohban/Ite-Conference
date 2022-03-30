@@ -101,7 +101,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         @if ('ar' != App::getLocale())
-                        <div style="right: auto;left: 5%" class="description position-absolute translate-middle" data-aos="zoom-in-up">
+                        <div style="right: auto;left: 0%" class="description position-absolute translate-middle" data-aos="zoom-in-up">
                             @endif
                             @if ('en' != App::getLocale())
                             <div class="description position-absolute translate-middle" data-aos="zoom-in-up">
