@@ -27,72 +27,101 @@
                 <a class="navbar-brand" href="{{ route('home') }}" data-aos="fade-up">
                     <img src="{{ $conference->getTranslatedAttribute('logo') }}" alt="" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div>
+                    <div class="d-inline-flex mobile">
+                        <span class="dropdown lang">
+                            <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                                    <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                                    <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                @if ('en' != App::getLocale())
+                                <li class="nav-item" data-aos="fade-up">
+                                    <a class="nav-link" href="{{ route('lang.switch', 'en') }}">
+                                        @lang('home.englishLanguage')
+                                    </a>
+                                </li>
+                                @endif
+                                @if ('ar' != App::getLocale())
+                                <li class="nav-item" data-aos="fade-up">
+                                    <a class="nav-link" href="{{ route('lang.switch', 'ar') }}">
+                                        @lang('home.arabicLanguage')
+                                    </a>
+                                </li>
+                                @endif
+                            </ul>
+                        </span>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                @if ('en' != App::getLocale())
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @endif
+                    @if ('ar' != App::getLocale())
+                    <ul class="navbar-nav ma-auto mb-2 mb-lg-0">
+                        @endif
+                        <li class="nav-item" data-aos="fade-up">
+                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">
+                                @lang('home.mainPage')
+                            </a>
+                        </li>
+                        @foreach($sections as $section)
+                        <li class="nav-item" data-aos="fade-up">
+                            <a class="nav-link" href="#{{ $section->title }}">
+                                {{ $section->getTranslatedAttribute('title') }}
+                            </a>
+                        </li>
+                        @endforeach
+                        <li class="nav-item" data-aos="fade-up">
+                            <a class="nav-link" href="#supervisors">
+                                @lang('home.supervisors')
+                            </a>
+                        </li>
+                        <li class="nav-item" data-aos="fade-up">
+                            <a class="nav-link" href="#contact">
+                                @lang('home.contactUs')
+                            </a>
+                        </li>
+                    </ul>
                     @if ('en' != App::getLocale())
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="d-flex" style="margin-left: 5%">
                         @endif
                         @if ('ar' != App::getLocale())
-                        <ul class="navbar-nav ma-auto mb-2 mb-lg-0">
+                        <div class="d-flex" style="margin-right: 5%">
                             @endif
-                            <li class="nav-item" data-aos="fade-up">
-                                <a class="nav-link active" aria-current="page" href="{{ route('home') }}">
-                                    @lang('home.mainPage')
-                                </a>
-                            </li>
-                            @foreach($sections as $section)
-                            <li class="nav-item" data-aos="fade-up">
-                                <a class="nav-link" href="#{{ $section->title }}">
-                                    {{ $section->getTranslatedAttribute('title') }}
-                                </a>
-                            </li>
-                            @endforeach
-                            <li class="nav-item" data-aos="fade-up">
-                                <a class="nav-link" href="#supervisors">
-                                    @lang('home.supervisors')
-                                </a>
-                            </li>
-                            <li class="nav-item" data-aos="fade-up">
-                                <a class="nav-link" href="#contact">
-                                    @lang('home.contactUs')
-                                </a>
-                            </li>
-                        </ul>
-                        @if ('en' != App::getLocale())
-                        <div class="d-flex" style="margin-left: 5%">
-                            @endif
-                            @if ('ar' != App::getLocale())
-                            <div class="d-flex" style="margin-right: 5%">
-                                @endif
-                                <span class="dropdown lang">
-                                    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
-                                            <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
-                                            <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
-                                        </svg>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        @if ('en' != App::getLocale())
-                                        <li class="nav-item" data-aos="fade-up">
-                                            <a class="nav-link" href="{{ route('lang.switch', 'en') }}">
-                                                @lang('home.englishLanguage')
-                                            </a>
-                                        </li>
-                                        @endif
-                                        @if ('ar' != App::getLocale())
-                                        <li class="nav-item" data-aos="fade-up">
-                                            <a class="nav-link" href="{{ route('lang.switch', 'ar') }}">
-                                                @lang('home.arabicLanguage')
-                                            </a>
-                                        </li>
-                                        @endif
-                                    </ul>
-                                </span>
-                            </div>
+                            <span class="dropdown lang">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                                        <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                                        <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    @if ('en' != App::getLocale())
+                                    <li class="nav-item" data-aos="fade-up">
+                                        <a class="nav-link" href="{{ route('lang.switch', 'en') }}">
+                                            @lang('home.englishLanguage')
+                                        </a>
+                                    </li>
+                                    @endif
+                                    @if ('ar' != App::getLocale())
+                                    <li class="nav-item" data-aos="fade-up">
+                                        <a class="nav-link" href="{{ route('lang.switch', 'ar') }}">
+                                            @lang('home.arabicLanguage')
+                                        </a>
+                                    </li>
+                                    @endif
+                                </ul>
+                            </span>
                         </div>
-                </div>
+                    </div>
+            </div>
         </nav>
     </header>
     <main id="home">
@@ -101,10 +130,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         @if ('ar' != App::getLocale())
-                        <div style="right: auto;left: 0%" class="description position-absolute translate-middle" data-aos="zoom-in-up">
+                        <div style="right: none;left: -50%;bottom: -50%;top: none" class="description position-absolute translate-middle" data-aos="zoom-in-up">
                             @endif
                             @if ('en' != App::getLocale())
-                            <div class="description position-absolute translate-middle" data-aos="zoom-in-up">
+                            <div class="description position-absolute translate-middle" style="bottom: -50%" data-aos="zoom-in-up">
                                 @endif
                                 <h1>{{ $conference->getTranslatedAttribute('name') ?? '' }}</h1>
                                 <p>{{ $conference->getTranslatedAttribute('bio') ?? '' }}</p>
@@ -199,17 +228,17 @@
                                         <label for="inputEmail4" class="form-label">@lang('home.email')</label>
                                         <input type="email" class="form-control" id="inputEmail4" name="email">
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-md-12">
                                         <label for="inputAddress" class="form-label">@lang('home.title')</label>
                                         <input type="text" class="form-control" id="inputAddress" name="title">
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-md-12">
                                         <label for="inputAddress2" class="form-label">@lang('home.message')</label>
                                         <textarea type="text" class="form-control" id="inputAddress2" rows="6" placeholder="الرسالة" name="message">
                                     </textarea>
                                     </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary">@lang('home.send')</button>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary mt-2">@lang('home.send')</button>
                                     </div>
                                 </form>
                         </div>

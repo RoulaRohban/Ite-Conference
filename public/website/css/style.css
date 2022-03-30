@@ -146,7 +146,9 @@ section:nth-child(odd) {
     font-size: 10px;
   }
 }
-
+.navbar {
+  width: 100vw;
+}
 #mobile {
   display: none;
 }
@@ -155,9 +157,22 @@ section:nth-child(odd) {
     background-color: white;
   }
 }
+.d-flex.mobile {
+  display: none;
+}
 @media (max-width: 768px) {
+  .d-flex {
+    display: none !important;
+  }
+  .d-flex.mobile {
+    display: block !important;
+  }
   #home #banner .description {
     right: 40%;
+    width: 100%;
+  }
+  #home #banner .col-md-12 {
+    position: relative;
   }
   .navbar .container-fluid .navbar-brand {
     width: 30%;
