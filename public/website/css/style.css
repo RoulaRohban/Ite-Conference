@@ -146,9 +146,7 @@ section:nth-child(odd) {
     font-size: 10px;
   }
 }
-.navbar {
-  width: 100vw;
-}
+
 #mobile {
   display: none;
 }
@@ -157,22 +155,24 @@ section:nth-child(odd) {
     background-color: white;
   }
 }
-.d-flex.mobile {
+.AousMobile {
   display: none;
 }
+#contact button {
+  margin-top: 15px;
+}
 @media (max-width: 768px) {
-  .d-flex {
-    display: none !important;
+  .AousLaptop {
+    display: none;
   }
-  .d-flex.mobile {
-    display: block !important;
+  .AousMobile {
+    display: block;
+  }
+  .LapTop {
+    display: none !important;
   }
   #home #banner .description {
     right: 40%;
-    width: 100%;
-  }
-  #home #banner .col-md-12 {
-    position: relative;
   }
   .navbar .container-fluid .navbar-brand {
     width: 30%;
