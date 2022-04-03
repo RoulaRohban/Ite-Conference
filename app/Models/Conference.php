@@ -8,5 +8,5 @@ use TCG\Voyager\Traits\Translatable;
 class Conference extends Model
 {
     use Translatable;
-    protected $translatable = ['name', 'bio', 'country', 'cover_image', 'logo'];
+    protected $translatable = ['name', 'bio', 'country'];
 }
