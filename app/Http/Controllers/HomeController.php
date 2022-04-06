@@ -16,7 +16,7 @@ class HomeController extends Controller
 {
     public function index () {
         $conference = Conference::with('translations')->take(1)->first();
-        $sections =Section::with('translations')->get();
+        $sections =Section::with('translations')->orderBy('order', 'ASC')->get();
         $supervisors = Supervisor::with('translations')->get();
 
         return view('home', compact('conference', 'sections', 'supervisors'));

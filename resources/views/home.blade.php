@@ -81,7 +81,7 @@
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                         </svg>
                     </p>
-                    <a class="btn btn-primary w-10 mb-3" href="#" role="button">@lang('home.register')</a>
+                    <a class="btn btn-primary w-10 mb-3" href="{{ $conference->register_link }}" role="button">@lang('home.register')</a>
                     <div class="timer" id="demo"></div>
                 </div>
             </div>
@@ -136,6 +136,7 @@
                         <h3>@lang('home.contactUs')</h3>
                     </div>
                     <form method="POST" action="{{ route('contact-us') }}">
+                        @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">@lang('home.email')</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
@@ -149,7 +150,7 @@
                         </div>
                         <label for="message" class="form-label">@lang('home.message')</label>
                         <div class="mb-3">
-                            <textarea class="form-control" name="message" cols="30" rows="10" name="message"></textarea>
+                            <textarea class="form-control" cols="30" rows="10" name="message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('home.send')</button>
                     </form>
