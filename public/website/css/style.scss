@@ -1,93 +1,78 @@
 header {
-    nav ul li {
-        margin-right: 5%;
-        margin-left: 5%;
-        a {
-            width: max-content;
+    nav {
+        padding-right: 5%;
+        height: 20vh;
+        .navbar-brand {
+            width: 10%;
+            img {
+                width: 100%;
+            }
+        }
+        ul li {
+            margin-right: 15%;
         }
     }
-}
-
-#home {
-    #banner {
-        width: 100%;
+    .slider {
+        margin-top: 20vh;
         height: 80vh;
-        background-position: bottom;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.356)), url('/images/bg.jpg');
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.5)),
-            url("../images/confernce-hall-geneva.jpg");
-        h1,
-        p {
-            color: white;
-            margin-bottom: 10%;
+        .w-10 {
+            width: 10vw;
         }
-        .description {
-            top: 50%;
-            right: 20%;
-        }
-    }
-    #desc {
-        padding: 5em;
     }
 }
 
-#about,
-#contact {
-    padding: 5em;
+
+:root {
+    --green: #053f00;
+    --grey: #cfcfcf;
 }
-header {
-    height: 11vh;
-    nav {
-        height: 11vh;
+
+.bg-grey {
+    background-color: var(--grey);
+}
+main {
+    padding: 5% 10%;
+    
+    .card {
+        h2 {
+            color: var(--green);
+            text-decoration: underline;
+        }
+    }
+
+}
+
+
+.supervisor {
+    img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
     }
 }
+
+
 footer {
     height: 7vh;
-    background-color: rgb(29, 29, 29);
+    background-color: #1d1d1d;
     display: flex;
     justify-content: center;
     align-items: center;
     div {
         color: white;
-    }
-}
-
-h2 {
-    text-decoration: underline;
-    color: rgb(5, 63, 0);
-}
-
-main {
-    min-height: 82vh;
-}
-
-#supervisors {
-    .supervisor {
-        img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-position: top;
-            object-fit: cover;
+        a {
+            color: white;
+            text-decoration: none;
         }
     }
 }
 
-
-.counter {
-    #demo {
-        font-size: 35px;
-        margin-bottom: 0;
-        margin-top: 25px;
-    }
+.titles * {
+    color: white;
 }
-
-section {
-    padding: 4em;
-}
-section:nth-child(odd) {
-    background-color: rgb(207, 207, 207);
-}
-
-nav { background-color: white; }
