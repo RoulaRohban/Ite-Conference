@@ -16,4 +16,5 @@ return [
     'seconds' => 'ثانية',
     'englishLanguage' => 'اللغة الإنكليزية',
     'arabicLanguage' => 'اللغة العربية',
+    'emailHint' => 'لن نشارك بريدك الإلكتروني مع أي شخص آخر.',
 ];

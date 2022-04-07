@@ -16,4 +16,5 @@ return [
     'seconds' => 'Seconds',
     'englishLanguage' => 'English Language',
     'arabicLanguage' => 'Arabic Language',
+    'emailHint' => 'We will never share your email with anyone else.'
 ];

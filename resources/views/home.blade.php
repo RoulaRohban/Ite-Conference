@@ -52,8 +52,16 @@
                             </svg>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Ar</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            @if ('en' != App::getLocale())
+                            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">@lang('home.englishLanguage')</a></li>
+                            @endif
+                                @if ('ar' != App::getLocale())
+                                    <li class="dropdown-item" data-aos="fade-up">
+                                        <a class="nav-link" href="{{ route('lang.switch', 'ar') }}">
+                                            @lang('home.arabicLanguage')
+                                        </a>
+                                    </li>
+                                @endif
                         </ul>
                     </div>
                 </div>
@@ -142,7 +150,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">@lang('home.email')</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                <div id="emailHelp" class="form-text">@lang('home.emailHint')
                                 </div>
                             </div>
                             <div class="mb-3">
