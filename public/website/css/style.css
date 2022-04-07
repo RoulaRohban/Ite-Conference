@@ -2,6 +2,9 @@ header nav {
   padding-right: 5%;
   height: 20vh;
 }
+.navbar-collapse {
+  height: 20vh;
+}
 
 header nav .navbar-brand {
   width: 10%;
@@ -10,9 +13,14 @@ header nav .navbar-brand {
 header nav .navbar-brand img {
   width: 100%;
 }
-
+.datetime {
+  font-size: 2em;
+}
 header nav ul li {
-  margin-right: 15%;
+  margin-right: 3%;
+}
+header nav ul li a{
+  width: max-content;
 }
 
 header .slider {
@@ -81,5 +89,59 @@ footer div a {
 
 .titles * {
   color: white;
+}
+@media (max-width: 1152px) and (max-height: 864px) {
+  header nav ul li {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 25vh;
+  }
+  .titles h1 {
+    font-size: 25px;
+  }
+  .datetime {
+    font-size: 20px;
+  }
+  footer div {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 25px;
+  }
+  header .slider {
+    margin-top: 5vh;
+    padding: 0 !important;
+  }
+  header .slider .w-10 {
+    width: 20vw;
+  }
+  .card-body {
+    padding: 1rem !important;
+  }
+  .card-header {
+    padding: 1rem !important;
+  }
+  .datetime {
+    font-size: 16px;
+  }
+  footer {
+    height: auto;
+    padding: 15px;
+  }
+  footer div {
+    font-size: 13px;
+  }
+  .navbar-collapse {
+    height: auto;
+    padding: 1rem !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
