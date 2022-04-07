@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top p-md-5">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" data-aos="fade-up">
-                    <img src="{{ asset('website/images/logo.png')}}" class="d-inline-block" alt="">
+                    <img src="{{ $conference->logo }}" class="d-inline-block" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </nav>
-        <div class="slider px-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.356)), url({{ asset('website/images/bg.jpg')}});">
+        <div class="slider px-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.356)), url({{ str_replace('\\', '/', $conference->cover_image) }});">
             <div class="container-fluid px-5 h-100">
                 <div class="row h-100">
                     <div class="col-12 h-100 d-flex flex-column justify-content-center titles" data-aos="fade-down" data-aos-anchor-placement="top-bottom">
