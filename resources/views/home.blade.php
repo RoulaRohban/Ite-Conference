@@ -16,7 +16,6 @@
     @endif
     <link rel="stylesheet" href="{{ asset('website/css/style.css')}}">
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top p-md-5">
@@ -30,7 +29,7 @@
                 <div class="collapse navbar-collapse bg-light p-5" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0">
                         <li class="nav-item" data-aos="fade-up"  >
-                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">@lang('home.mainPage')</a>
+                            <a class="nav-link active" aria-current="page" href="#">@lang('home.mainPage')</a>
                         </li>
                         @foreach($sections as $section)
                         <li class="nav-item" data-aos="fade-up"  >
@@ -148,20 +147,35 @@
                         <form method="POST" action="{{ route('contact-us') }}">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">@lang('home.email')</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                                <label for="email1" class="form-label">@lang('home.email')</label>
+                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" name="email">
                                 <div id="emailHelp" class="form-text">@lang('home.emailHint')
                                 </div>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                                @endif
                             </div>
                             <div class="mb-3">
-                                <label for="subject" class="form-label">@lang('home.title')</label>
-                                <input type="text" class="form-control" id="subject" name="title">
+                                <label for="title" class="form-label">@lang('home.title')</label>
+                                <input type="text" class="form-control" name="title" id="title">
+                                @if ($errors->has('title'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('title') }}</strong>
+                                </span>
+                                @endif
                             </div>
                             <label for="message" class="form-label">@lang('home.message')</label>
                             <div class="mb-3">
-                                <textarea class="form-control" cols="30" rows="10" name="message"></textarea>
+                                <textarea class="form-control" cols="30" rows="10" name="message" id="message"></textarea>
+                                @if ($errors->has('message'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('message') }}</strong>
+                                </span>
+                                @endif
                             </div>
-                            <button type="submit" class="btn btn-primary">@lang('home.send')</button>
+                            <button id="submitButton" type="submit" class="btn btn-primary">@lang('home.send')</button>
                         </form>
                     </div>
                 </div>
@@ -229,6 +243,17 @@
                 }
             }, 1000);
         });
+
+        // $(function () {
+        //     $('#submitButton').attr('disabled', true);
+        //     $('#message').change(function () {
+        //         if ($('#email').val() != '' && $('#title').val() != '' && $('#message').val() != '') {
+        //             $('#submitButton').attr('disabled', false);
+        //         } else {
+        //             $('#submitButton').attr('disabled', true);
+        //         }
+        //     });
+        // });
     </script>
 </body>
 
