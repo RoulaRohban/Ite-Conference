@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{ asset('website/css/bootstrap.rtl.min.css')}}">
     @endif
     <link rel="stylesheet" href="{{ asset('website/css/style.css')}}">
+    @if ('ar' == App::getLocale())
+    <link rel="stylesheet" href="{{ asset('website/css/style.rtl.css')}}">
+    @endif
 </head>
 <body>
     <header>
