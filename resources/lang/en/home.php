@@ -3,7 +3,7 @@
 return [
 
     'mainPage' => 'Main Page',
-    'supervisors' => 'Supervisors',
+    'supervisors' => 'Editorial Board',
     'contactUs' => 'Contact Us',
     'register' => 'Register',
     'email' => 'Email',

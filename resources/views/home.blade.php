@@ -18,6 +18,7 @@
     @if ('ar' == App::getLocale())
     <link rel="stylesheet" href="{{ asset('website/css/style.rtl.css')}}">
     @endif
+    <link rel="icon" type="image/x-icon" href="{{ asset($conference->logo) }}">
 </head>
 <body>
     <header>
@@ -129,7 +130,7 @@
                     @foreach($supervisors as $supervisor)
                     <div class="col-md-4 mb-5">
                         <div class="supervisor text-center" data-aos="fade-up">
-                            <img src="{{ $supervisor->image ?? asset('website/images/Unknown_person.jpg') }}" class="mb-2" alt="">
+{{--                            <img src="{{ $supervisor->image ?? asset('website/images/Unknown_person.jpg') }}" class="mb-2" alt="">--}}
                             <h3 class="m-2">{{ $supervisor->getTranslatedAttribute('name') }}</h3>
                             <small>{{ $supervisor->getTranslatedAttribute('position') }}</small>
                         </div>
