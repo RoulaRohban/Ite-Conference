@@ -70,7 +70,7 @@
                 </div>
             </div>
         </nav>
-        <div class="slider px-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.356)), url({{ str_replace('\\', '/', $conference->cover_image) }});">
+        <div class="slider px-5" style="margin-top: 0vh; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.356)), url({{ str_replace('\\', '/', $conference->cover_image) }});">
             <div class="container-fluid px-5 h-100">
                 <div class="row h-100">
                     <div class="col-12 h-100 d-flex flex-column justify-content-center titles" data-aos="fade-down" data-aos-anchor-placement="top-bottom">
