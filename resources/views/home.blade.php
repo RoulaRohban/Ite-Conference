@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top p-md-5">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light p-md-5">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" data-aos="fade-up">
                     <img src="{{ $conference->logo }}" class="d-inline-block" alt="">
@@ -104,7 +104,8 @@
     </header>
     <main>
         @foreach($sections as $section)
-        <div id="{{ $section->title }}" class="mb-5" data-aos="fade-up">
+            <section id="{{ $section->title }}">
+                <div class="mb-5" data-aos="fade-up">
             <div class="card">
                 <div class="card-header p-5">
                     <h2>
@@ -116,6 +117,7 @@
                 </div>
             </div>
         </div>
+            </section>
         @endforeach
     </main>
     <section id="supervisors">
