@@ -8,6 +8,7 @@
     <title>{{ $conference->getTranslatedAttribute('name') ?? '' }}</title>
 
     <link rel="stylesheet" href="{{ asset('website/css/aos.css')}}">
+    <link rel="stylesheet" href="{{ asset('website/css/socialIcons.css')}}">
     @if ('ar' != App::getLocale())
     <link rel="stylesheet" href="{{ asset('website/css/bootstrap.min.css')}}">
     @endif
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('website/css/style.rtl.css')}}">
     @endif
     <link rel="icon" type="image/x-icon" href="{{ asset($conference->logo) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -143,16 +145,21 @@
         </div>
     </section>
     <section id="contact-us">
-        <div class="p-5">
+        <div class="">
+            <div class="icon-bar">
+                <a href="https://www.facebook.com/national.conference.ite" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/national.conference.ite" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/national.conference.ite" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 mb-5">
+                    <div class="col-md-12 mb-5 p-5">
                         <div class="text-center">
                             <h3>@lang('home.contactUs')</h3>
                         </div>
                         <form method="POST" action="{{ route('contact-us') }}">
                             @csrf
-                            <div class="mb-3">
+                            <div class="mb-3 p-2">
                                 <label for="email1" class="form-label">@lang('home.email')</label>
                                 <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" name="email">
                                 <div id="emailHelp" class="form-text">@lang('home.emailHint')
@@ -163,7 +170,7 @@
                                 </span>
                                 @endif
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 p-2">
                                 <label for="title" class="form-label">@lang('home.title')</label>
                                 <input type="text" class="form-control" name="title" id="title">
                                 @if ($errors->has('title'))
@@ -172,8 +179,8 @@
                                 </span>
                                 @endif
                             </div>
-                            <label for="message" class="form-label">@lang('home.message')</label>
-                            <div class="mb-3">
+                            <div class="mb-3 p-2">
+                                <label for="message" class="form-label">@lang('home.message')</label>
                                 <textarea class="form-control" cols="30" rows="10" name="message" id="message"></textarea>
                                 @if ($errors->has('message'))
                                     <span class="help-block">
