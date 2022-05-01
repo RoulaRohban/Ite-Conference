@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Contact\StoreContactRequest;
+use App\Mail\ContactMail;
 use App\Models\Conference;
 use App\Models\ContactUs;
 use App\Models\Section;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -23,7 +25,8 @@ class HomeController extends Controller
     }
     public function storeContact(StoreContactRequest $request){
         $validated_data = $request->validated();
-        ContactUs::create($validated_data);
+        $contact = ContactUs::create($validated_data);
+        Mail::to(['ubaisandouk@gmail.com', 'm.s.trab@hotmail.com', 'r.alrohban@workwithnerds.ca'])->send(new ContactMail($contact));
         return redirect()->route('home')->with('success', 'تم إرسال الطلب بنجاح');
     }
 
